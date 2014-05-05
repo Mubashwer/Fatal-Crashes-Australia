@@ -1,0 +1,104 @@
+body{
+    margin:0px;
+    padding:0px;
+    background:linear-gradient(to left, #859978, #a6bf96, #ffffff );
+    background-size: 270%;
+}
+
+table.pivot_table{
+    
+    margin:0px;
+    padding:0px;
+    border:1px solid #ffffff;
+    background-color:transparent
+}
+
+table.pivot_table td{
+    vertical-align:middle;
+    border:1px solid #ffffff;
+    border-width:0px 1px 1px 0px;
+    text-align:left;
+    padding:7px;
+    font-size:16px;
+    font-family:Verdana, Geneva, sans-serif;
+    font-weight:normal;
+    color:#000000;
+}
+
+table.pivot_table td.vlow{
+    background-color:#C0FFB0;
+}
+
+table.pivot_table td.low{
+    background-color:#ADE59F;
+}
+
+table.pivot_table td.medium{
+    background-color:#90BF84;
+}
+
+table.pivot_table td.high{
+    background-color:#607F58;
+}
+
+table.pivot_table td.vhigh{
+    background-color:#30402C;
+color:#FFFFFF;
+}
+
+table.pivot_table td.total{
+    background-color:#014A48;
+    color:#BCFFF9;
+}
+
+table.pivot_table td.blank{
+    background-color:transparent;
+}
+
+table.pivot_table th{
+
+    background-color:#021F11;
+    border:0px solid #ffffff;
+    text-align:center;
+    padding:5px;
+    border-width:0px 0px 1px 1px;
+    font-size:14px;
+    font-family:Verdana, Geneva, sans-serif;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+table.pivot_table tr td:last-child{
+    font-weight:bold
+}
+
+table.pivot_table tr:last-child td{
+    font-weight:bold
+}
+
+table.pivot_table tr:hover td{
+    background-color:#d3e9ff;
+}
+
+table.pivot_table tr:hover td.vhigh{
+    color:#000000
+}
+
+table.pivot_table tr:hover td.total{
+    color:#000000
+}
+
+table.pivot_table tr:hover th{
+    background-color:#666666;
+}
+
+.error{
+    margin-left:20px;
+}
+
+.error_text{
+    font-size:16px;
+    font-family:Verdana, Geneva, sans-serif;
+    font-weight:bold;
+}
+    

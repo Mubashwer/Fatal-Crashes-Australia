@@ -1,0 +1,88 @@
+body{
+    background: linear-gradient(to left, #a6bf96, #ffffff);
+    font: normal 0.8em Verdana, Geneva, sans-serif;
+    color: #FFFFFF;
+ 
+}
+
+fieldset{  
+    margin: 0px;  
+    padding: 5px;  
+    border: 1px solid #989898 ;  
+    border-bottom: 1px solid #FFFFFF;  
+    border-right: 1px solid #FFFFFF;  
+    background-color: #14434F; 
+}
+
+.container{    
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;  
+    width: 565px;
+    background-color: #021F11;
+    border: 5px solid #989898 ; 
+    border-top: 5px solid #FFFFFF;  
+    border-left: 5px solid #FFFFFF;
+    vertical-align:middle;    
+}
+
+label{
+    font: normal 1.1em Verdana, Geneva, sans-serif;
+    color: #FFFFFF;
+    margin-top:4px;
+    margin-bottom:4px;    
+    width: 100px;;    
+    display:block;
+    float:left;
+    text-align:right;
+    margin-right: 7px;
+}
+
+.field_select.rows{
+    width: 100px
+}
+
+.menu{
+    font: normal 1em Verdana, Geneva, sans-serif;
+    color: #666666;
+    background-color: #ffffff;
+    border:#e0e0e0 1px solid;
+    width: 18em
+}
+
+.menu:focus{
+    color: #000000;
+    background-color: #ffffdd;
+    border:#606060 1px solid;
+}
+#filter_value{
+    width:17em
+}
+
+.field_select{
+    margin-top:4px;
+    margin-bottom:4px;    
+    position: relative
+}
+
+#filter_text{
+   width:10.5em
+}
+
+#buttons{
+    text-align: right;
+}
+
+#buttons input{
+    font: normal 1em Verdana, Geneva, sans-serif;
+}
+
+h2.header{
+    font: normal 1.7em Verdana, Geneva, sans-serif;
+    margin-top:0px;
+}
+
+.data_source{
+    margin-left:20px
+}        
+
