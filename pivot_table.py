@@ -121,7 +121,7 @@ def redirect_form():
     
 def main():
     # load data from csv file
-    csvfile = open("fatal_crashes_10_years.csv")
+    csvfile = open("fatal_crashes_5_years.csv")
     data = csv.DictReader(csvfile)
     form = cgi.FieldStorage()
     if len(form) == 0:
