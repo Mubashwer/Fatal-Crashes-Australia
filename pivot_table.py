@@ -24,7 +24,7 @@ html_end = '''
 </div></body></html>'''
 
 
-def give_value(values, formula):
+def apply_formula(values, formula):
     """It performs given formula on values."""
     if formula == "COUNT":
         return len(values)
@@ -229,15 +229,15 @@ def main():
         
     # the given formula is performed on all the organized data                        
     # all_total is the grand total of all the values by applying formula
-    all_total = give_value(all_values, formula)    
+    all_total = apply_formula(all_values, formula)    
     # all_values is now to be a list with all values after formula is applied
     all_values = []  
     for col_key in col_headers: #formula is being applied to all the values and totals
-        col_totals[col_key] = give_value(col_totals[col_key], formula)   
+        col_totals[col_key] = apply_formula(col_totals[col_key], formula)   
     for row_key in values:
-        row_totals[row_key] = give_value(row_totals[row_key], formula)
+        row_totals[row_key] = apply_formula(row_totals[row_key], formula)
         for col_key in values[row_key]:
-            value = give_value(values[row_key][col_key], formula)
+            value = apply_formula(values[row_key][col_key], formula)
             values[row_key][col_key] = value
             all_values += [value]
 
