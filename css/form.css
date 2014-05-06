@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(to left, #a6bf96, #ffffff);
+    background:linear-gradient(to left, #a6bf96, #ffffff, #a6bf96);
     font: normal 0.8em Verdana, Geneva, sans-serif;
     color: #FFFFFF;
  
@@ -12,6 +12,10 @@ fieldset{
     border-bottom: 1px solid #FFFFFF;  
     border-right: 1px solid #FFFFFF;  
     background-color: #14434F; 
+}
+
+fieldset > legend{
+    color: #FFFFFF;     
 }
 
 .container{    
@@ -29,9 +33,7 @@ fieldset{
 label{
     font: normal 1.1em Verdana, Geneva, sans-serif;
     color: #FFFFFF;
-    margin-top:4px;
-    margin-bottom:4px;    
-    width: 100px;;    
+    width: 100px;    
     display:block;
     float:left;
     text-align:right;
@@ -86,3 +88,4 @@ h2.header{
     margin-left:20px
 }        
 
+​

@@ -1,8 +1,7 @@
 body{
     margin:0px;
     padding:0px;
-    background:linear-gradient(to left, #859978, #a6bf96, #ffffff );
-    background-size: 270%;
+    background:linear-gradient(to left, #a6bf96, #ffffff, #a6bf96);
 }
 
 table.pivot_table{
@@ -102,3 +101,4 @@ table.pivot_table tr:hover th{
     font-weight:bold;
 }
     
+​
