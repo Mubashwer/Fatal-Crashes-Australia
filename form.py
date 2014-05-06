@@ -23,7 +23,7 @@ html_form ='''
 <h2 class="header">Fatal Crashes in Australia (2009-2013)</h2>
 <form action="pivot_table.py" method="post">
     <fieldset id="pivot_table">
-            <legend>Pivot Report Editor</legend>
+            <legend>Pivot Table Report Editor</legend>
             <div class="field_select">
                 <label for="rows">Rows:</label>
                 <select class="menu menu_row" name="rows" id="rows">
