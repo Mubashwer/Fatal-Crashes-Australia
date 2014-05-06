@@ -2,7 +2,9 @@ Fatal-Crashes-Australia
 =======================
 Dataset source: https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx
 
+contributors: Mubashwer Salman Khurshid (601738), Philip Lizio, Asir Akram Sadman (INFO2002_2014S1_WED10_2)
 
+=======================
 Project Phase 3
 An interactive web application [group]
 
