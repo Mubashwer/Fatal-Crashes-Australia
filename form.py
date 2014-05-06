@@ -116,7 +116,7 @@ html_form ='''
 </form>'''
 
 html_links = '''
-<span class="data_source"><a href="https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx">Data source</a><span>'''
+<span class="data_source"><a href="https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx">Data source</a></span>'''
 
 def main():
     print 'Content-Type: text/html\n'
