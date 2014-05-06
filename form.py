@@ -12,7 +12,7 @@ html_start = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Fatal Crashes in Australia</title>
-<link rel="stylesheet" href="css/form.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="form.css" type="text/css" media="screen" charset="utf-8" />
 </head>
 <body><div class="container"> '''
 
@@ -115,13 +115,14 @@ html_form ='''
     </div>
 </form>'''
 
-html_data_source = '<span class="data_source"><a href="https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx">Data source</a></span>'
+html_links = '''
+<span class="data_source"><a href="https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx">Data source</a><span>'''
 
 def main():
     print 'Content-Type: text/html\n'
     print html_start
     print html_form
-    print html_data_source
+    print html_links
     print html_end
 
 main()

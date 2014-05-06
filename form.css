@@ -1,7 +1,7 @@
 body{
     background:linear-gradient(to left, #a6bf96, #ffffff, #a6bf96);
     font: normal 0.8em Verdana, Geneva, sans-serif;
-    color: #FFFFFF;
+    color:#FFFFFF;
  
 }
 
@@ -57,6 +57,7 @@ label{
     background-color: #ffffdd;
     border:#606060 1px solid;
 }
+
 #filter_value{
     width:17em
 }
@@ -88,4 +89,3 @@ h2.header{
     margin-left:20px
 }        
 
-​

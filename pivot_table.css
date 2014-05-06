@@ -4,8 +4,7 @@ body{
     background:linear-gradient(to left, #a6bf96, #ffffff, #a6bf96);
 }
 
-table.pivot_table{
-    
+table.pivot_table{   
     margin:0px;
     padding:0px;
     border:1px solid #ffffff;
@@ -42,7 +41,7 @@ table.pivot_table td.high{
 
 table.pivot_table td.vhigh{
     background-color:#30402C;
-color:#FFFFFF;
+    color:#FFFFFF;
 }
 
 table.pivot_table td.total{
@@ -101,4 +100,4 @@ table.pivot_table tr:hover th{
     font-weight:bold;
 }
     
-​
+
