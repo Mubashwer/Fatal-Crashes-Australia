@@ -12,7 +12,7 @@ fieldset{
     border-bottom: 1px solid #FFFFFF;  
     border-right: 1px solid #FFFFFF;  
     background-color: #14434F;
-    border-radius: 20px
+    border-radius: 20px    
 }
 
 fieldset > legend{
@@ -29,7 +29,7 @@ fieldset > legend{
     border-top: 5px solid #FFFFFF;  
     border-left: 5px solid #FFFFFF;
     vertical-align:middle;
-    border-radius: 20px
+    border-radius: 20px    
 }
 
 label{
@@ -90,4 +90,3 @@ h2.header{
 .data_source{
     margin-left:20px
 }        
-

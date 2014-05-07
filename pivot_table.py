@@ -2,6 +2,7 @@ import cgi
 import csv
 from collections import defaultdict
 from math import ceil
+import calendar
 
 
 # tools for debugging
@@ -47,10 +48,8 @@ def apply_formula(values, formula):
 def give_header(val, header_var):
     """It converts the header values of months and hours to
     appropriate format."""
-    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
-              "Aug", "Sep", "Oct", "Nov", "Dec"]
     if header_var == 'Month':
-        return months[int(val) - 1]
+        return calendar.month_abbr[int(val)]
     if header_var == 'Hour':
         return "{}-{:02d}".format(val, int(val)+1)
     return val
@@ -161,7 +160,7 @@ def main():
     col_sort_key = None
     col_reverse = int(form.getfirst('order_col')) # variable for column                                  
     
-    dayweek_keys = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] # sort key 
+    dayweek_key = list(calendar.day_name).index # sort key for days in week
     
     # sort keys are int for numerical data, dayweek_keys for days of week and none for others
     if row_var in ['Day', 'Month', 'Speed Limit' ,'Number of Fatalities']: 
@@ -169,9 +168,9 @@ def main():
     if col_var in ['Day', 'Month', 'Speed Limit' ,'Number of Fatalities']: 
         col_sort_key = int
     if row_var == 'Dayweek':
-        row_sort_key = dayweek_keys.index
+        row_sort_key = dayweek_key
     if col_var == 'Dayweek':
-        col_sort_key = dayweek_keys.index
+        col_sort_key = dayweek_key
     
     # data containers for storing values for pivot table
     values = {} # dictionary of dictionary with list as value e.g values['Sunday']['VIC'] = [1,2,1,1...1,2]
