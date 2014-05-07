@@ -1,8 +1,8 @@
-Fatal-Crashes-Australia
+Fatal Crashes in Australia (2009-2013): Pivot Table Builder and Data Insights
 =======================
 Dataset source: https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx
 
-contributors: Mubashwer Salman Khurshid (601738), Philip Lizio, Asir Akram Sadman (INFO2002_2014S1_WED10_2)
+Contributors: Mubashwer Salman Khurshid (601738), Philip Lizio (582835), Asir Akram Sadman (601258) INFO2002_2014S1_WED10_2]
 
 =======================
 Project Phase 3
