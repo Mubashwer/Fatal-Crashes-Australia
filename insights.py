@@ -97,6 +97,7 @@ def main():
     ht_data3, ht_data4 = defaultdict(int), defaultdict(int)
     ht_data5 = defaultdict(int)
     
+    # store data in dictionaries for each hypothesis
     for row in data:
         fatalities = int(row[dep_var])
         ht_data1[row[ht_var1]] += fatalities
