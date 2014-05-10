@@ -58,6 +58,11 @@ ht_var5 = 'Speed Limit'
 
 dep_var = 'Number of Fatalities' # depedendent variable
 
+def webshow( img ): # call this function and serve to check graph
+    savefig( img, dpi=50 )
+    print 'Content-Type: text/html\n'
+    print '<img width="400" height="300" src="'+img+'" />'
+
 def vs_year(data): #ASIR, line graph
     print data # test
 
@@ -102,7 +107,7 @@ def main():
         if '-9' not in row[ht_var2]:
             ht_data5[int(row[ht_var5])] += fatalities
     csvfile.close()
-    print 'Content-Type: text/html\n'        
+    #print 'Content-Type: text/html\n'        
     
     vs_year(ht_data1)
     vs_time(ht_data2)
