@@ -118,6 +118,8 @@ html_form ='''
 html_links = '''
 <span class="data_source"><a href="https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx">Data source</a></span>'''
 
+
+# main function which controls all the action
 def main():
     print 'Content-Type: text/html\n'
     print html_start

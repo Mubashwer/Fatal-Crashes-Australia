@@ -24,6 +24,9 @@ html_start = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
 html_end = '''
 </div></body></html>'''
 
+# csv file location
+csv_loc = "fatal_crashes_5_years.csv"
+
 
 def apply_formula(values, formula):
     """It performs given formula on values."""
@@ -138,10 +141,10 @@ def redirect_form():
     print html_end
     sys.exit()
     
-
+# main function which controls all the action
 def main():
     # load data from csv file
-    csvfile = open("fatal_crashes_5_years.csv")
+    csvfile = open(csv_loc)
     data = csv.DictReader(csvfile)
     
     # load data from submitted form
