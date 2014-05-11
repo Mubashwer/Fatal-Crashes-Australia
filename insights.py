@@ -7,6 +7,7 @@ matplotlib.use('Agg')
 from pylab import *
 os.dup2(3,2)
 sys._stderr_ = sys.stderr = os.fdopen(2,'a')
+from numpy import *
 import csv
 from collections import defaultdict
 
