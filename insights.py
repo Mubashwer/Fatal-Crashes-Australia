@@ -58,33 +58,50 @@ ht_var5 = 'Speed Limit'
 
 dep_var = 'Number of Fatalities' # depedendent variable
 
-def webshow( img ): # call this function and serve to check graph
-    savefig( img, dpi=50 )
-    print '<img width="400" height="300" src="'+img+'" />'
+
+
+def webshow(img): # call this function and serve to check graph
+    savefig(img, dpi=50)
+    print '<img width="800" height="600" src="'+img+'" />'
+
+
 
 def vs_year(data): #ASIR, line graph
+    clf()
     print data # test
 
 
 
-def vs_time(data): #MUBASHWER, Histogram
-    print data # test
+def vs_time(data): #MUBASHWER, histogram
+    clf()
+    hist(data.keys(), bins = arange(0,25), weights = data.values(), facecolor="green")
+    xticks(arange(0,24,2), ['{:02d}'.format(hour) for hour in arange(0,24,2)])
+    grid(True) 
+    xlabel('Time (Hours in a Day)')
+    ylabel('Number of fatalities')
+    title('Histogram for Fatalities vs Time')
+    webshow('vs_time.png')
+    
 
 
 
 def vs_state(data): #ASIR, bar chart
+    clf()
     print data # test
 
 
 
 def vs_day(data): #PHILIP, Pie Chart
+    clf()
     print data # test
 
 
 
 def vs_speed_limit(data): #MUBASHWER, Scatter Plot
+    clf()
     print data # test
-
+    
+    
 # main function which controls all the action                    
 def main():
     # load data from csv file
