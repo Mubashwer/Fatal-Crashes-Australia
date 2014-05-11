@@ -100,7 +100,13 @@ def vs_day(data): #PHILIP, Pie Chart
 
 def vs_speed_limit(data): #MUBASHWER, Scatter Plot
     clf()
-    print data # test
+    scatter(data.keys(), data.values(), s = data.values(), color = 'red')
+    yticks(arange(0,3000,500))
+    grid(True) 
+    xlabel('Speed Limit (km/h)')
+    ylabel('Number of Fatalities')
+    title('Scatter Plot for Fatalities vs Speed Limit')
+    webshow('vs_speed_limit.png')
     
     
 # main function which controls all the action                    
