@@ -62,7 +62,7 @@ dep_var = 'Number of Fatalities' # depedendent variable
 
 def webshow(img): # call this function and serve to check graph
     savefig(img, dpi=50)
-    print '<img width="800" height="600" src="'+img+'" />'
+    print '<img width="400" height="300" src="'+img+'" />'
 
 
 
@@ -72,7 +72,7 @@ def vs_year(data): #ASIR, line graph
 
 
 
-def vs_time(data): #MUBASHWER, histogram
+def vs_hour(data): #MUBASHWER, histogram
     clf()
     hist(data.keys(), bins = arange(0,25), weights = data.values(), facecolor="green")
     xticks(arange(0,24,2), ['{:02d}'.format(hour) for hour in arange(0,24,2)])
@@ -80,7 +80,7 @@ def vs_time(data): #MUBASHWER, histogram
     xlabel('Time (Hours in a Day)')
     ylabel('Number of fatalities')
     title('Histogram for Fatalities vs Time')
-    webshow('vs_time.png')
+    webshow('vs_hour.png')
     
 
 
@@ -126,11 +126,12 @@ def main():
     csvfile.close()
     print 'Content-Type: text/html\n'        
     
-    vs_year(ht_data1)
-    vs_time(ht_data2)
-    vs_state(ht_data3)
-    vs_day(ht_data4)
-    vs_speed_limit(ht_data5)
+    # remove the hashtag for the function you are working on to test them
+    #vs_year(ht_data1)
+    vs_hour(ht_data2)
+    #vs_state(ht_data3)
+    #vs_day(ht_data4)
+    #vs_speed_limit(ht_data5)
     
         
 # main function which controls all the action
