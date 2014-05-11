@@ -121,7 +121,7 @@ def main():
             ht_data2[int(row[ht_var2])] += fatalities
         ht_data3[row[ht_var3]] += fatalities
         ht_data4[row[ht_var4]] += fatalities
-        if '-9' not in row[ht_var2]:
+        if '-9' not in row[ht_var5]:
             ht_data5[int(row[ht_var5])] += fatalities
     csvfile.close()
     print 'Content-Type: text/html\n'        
