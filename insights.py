@@ -98,8 +98,7 @@ page ='''
            ht_header5, ht_img5, ht_xpln5)
 
 
-def vs_year(data): #ASIR, line graph
-    clf()
+def vs_year(data):
     y = [item[1] for item in sorted(data.items(), key=lambda x: x[0])]
     plot(y, color='purple')
     xticks(arange(5), sorted(data.keys()), rotation=30)
@@ -110,22 +109,21 @@ def vs_year(data): #ASIR, line graph
     savefig(ht_img1, dpi=100)
 
     
-def vs_day(data): #PHILIP, Pie Chart
+def vs_day(data): 
     clf()
-    values = []
     labels = list(calendar.day_name)
+    values = []
     for day in labels:
         values += [data[day]]
     colors = ['b','g','r','c','m','y','#cccccc']
     pie(values, explode=None, labels=labels, autopct='%1.1f%%', shadow=True,
         colors=colors)
-
     title('Number of Fatalities Due to Road Crashes in Different Days of a Week',
           bbox={'facecolor':'0.8', 'pad':5})
     savefig(ht_img2, dpi=100)
 
 
-def vs_hour(data): #MUBASHWER, histogram
+def vs_hour(data): 
     clf()
     hist(data.keys(), bins = arange(0,25), weights = data.values(), facecolor='green')
     xticks(arange(0,24,2), ['{:02d}'.format(hour) for hour in arange(0,24,2)])
@@ -136,8 +134,7 @@ def vs_hour(data): #MUBASHWER, histogram
     savefig(ht_img3, dpi=100)
 
     
-    
-def vs_state(data): #ASIR, bar chart
+def vs_state(data):
     clf()
     bars = arange(len(data))
     heights = [item[1] for item in sorted(data.items(), key=lambda x: x[0])]
@@ -150,7 +147,7 @@ def vs_state(data): #ASIR, bar chart
     savefig(ht_img4, dpi=100)
 
     
-def vs_speed_limit(data): #MUBASHWER, Scatter Plot
+def vs_speed_limit(data): 
     clf()
     scatter(data.keys(), data.values(), s = data.values(), color = 'red')
     yticks(arange(0,3000,500))
