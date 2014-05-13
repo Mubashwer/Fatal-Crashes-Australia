@@ -23,7 +23,7 @@ html_start = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Fatal Crashes in Australia</title>
-<link rel="stylesheet" href="pivot_table.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="insights.css" type="text/css" media="screen" charset="utf-8" />
 </head>
 <body><div class="container"> '''
 
@@ -45,7 +45,7 @@ ht_xpln1 = '''efwsegwsegeswrtfwegws'''
 ht_xpln2 = '''qrfqt3eqftq3et3qt'''
 ht_xpln3 = '''etqetrw3trwt4t4t4t4t'''
 ht_xpln4 = '''It can be seen in the bar chart that the number of fatalities in New South Wales is larger than all
- other stated by a great margin. One of the reasons is that it is the most populated state. States with relatively low
+ other states by a great margin. One of the possible reasons is that it is the most populated state. States with relatively low
  population had very few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
 ht_xpln5 = '''q3erfefrewqr343r3rer'''
 
@@ -92,17 +92,9 @@ page ='''
     <div class="visual"><img src="{}" alt="image2" width="500" height="375"></div>
     <p class="explain"">{}</p>
 </div>
-'''.format(ht_header1, ht_img1, ht_xpln1, ht_header2, ht_img2, ht_xpln2, ht_header3, ht_img3, ht_xpln3, ht_header4, ht_img4, ht_xpln4, ht_header5, ht_img5, ht_xpln5)
-
-
-
-
-
-
-def webshow(img): # call this function and serve to check graph
-    savefig(img, dpi=80)
-    #print '<img width="400" height="300" src="'+img+'" />'
-
+'''.format(ht_header1, ht_img1, ht_xpln1, ht_header2, ht_img2, ht_xpln2,
+           ht_header3, ht_img3, ht_xpln3, ht_header4, ht_img4, ht_xpln4,
+           ht_header5, ht_img5, ht_xpln5)
 
 
 def vs_year(data): #ASIR, line graph
@@ -114,12 +106,12 @@ def vs_year(data): #ASIR, line graph
     xlabel('Time (Year)')
     ylabel(dep_var)
     title('Line Graph for Fatalities vs Time')
-    webshow(ht_img1)
+    savefig(ht_img1, dpi=100)
 
     
 def vs_day(data): #PHILIP, Pie Chart
     clf()
-    print data # test
+    savefig(ht_img2, dpi=100)
 
 
 def vs_hour(data): #MUBASHWER, histogram
@@ -130,7 +122,8 @@ def vs_hour(data): #MUBASHWER, histogram
     xlabel('Time (Hours in a Day)')
     ylabel(dep_var)
     title('Histogram for Fatalities vs Time')
-    webshow(ht_img3)
+    savefig(ht_img3, dpi=100)
+
     
     
 def vs_state(data): #ASIR, bar chart
@@ -143,10 +136,9 @@ def vs_state(data): #ASIR, bar chart
     xlabel('State')
     ylabel(dep_var)
     title('Bar Chart for Fatalities vs State')    
-    webshow(ht_img4)   
+    savefig(ht_img4, dpi=100)
+
     
-
-
 def vs_speed_limit(data): #MUBASHWER, Scatter Plot
     clf()
     scatter(data.keys(), data.values(), s = data.values(), color = 'red')
@@ -155,8 +147,8 @@ def vs_speed_limit(data): #MUBASHWER, Scatter Plot
     xlabel('Speed Limit (km/h)')
     ylabel(dep_var)
     title('Scatter Plot for Fatalities vs Speed Limit')
-    webshow(ht_img5)
-    
+    savefig(ht_img5, dpi=100)
+
     
 # main function which controls all the action                    
 def main():
@@ -182,9 +174,9 @@ def main():
     csvfile.close()
     print 'Content-Type: text/html\n'        
     
-    # remove the hashtag for the function you are working on to test them
+    # generate visualisations
     vs_year(ht_data1)
-    #vs_day(ht_data2)
+    vs_day(ht_data2)
     vs_hour(ht_data3)
     vs_state(ht_data4)
     vs_speed_limit(ht_data5)
