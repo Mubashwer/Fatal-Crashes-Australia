@@ -36,7 +36,6 @@ h2{
     border-left:5px solid #FFFFFF;
     vertical-align:middle;
     border-radius:20px
-        
 }
 
 .hypothesis{  
@@ -61,7 +60,6 @@ h2{
     border-left: 3px solid #FFFFFF;
     vertical-align:middle;
     border-radius: 15px 
-            
 }
 
 p.explain{  
@@ -69,4 +67,6 @@ p.explain{
     padding:5px;  
 }
 
-​
+.links{
+    margin-left:20px
+}        
