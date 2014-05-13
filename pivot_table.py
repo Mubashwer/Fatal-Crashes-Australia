@@ -24,8 +24,15 @@ html_start = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
 html_end = '''
 </div></body></html>'''
 
+# texts to be printed when some data are ignored
+unknown_time = '<div class="unknown">*Time for 1 fatal crash is unknown which is not taken into account.</div>\n'
+unknown_sl = '<div class="unknown">*Speed limits for 46 fatal crashes are unknown which are not taken into account.</div>\n'
+
 # csv file location
 csv_loc = "fatal_crashes_5_years.csv"
+
+# cgi script which generates the form
+form_script= 'form.py'
 
 
 def apply_formula(values, formula):
@@ -134,10 +141,9 @@ def to_int(value):
 
 def redirect_form():
     """User is offered to go to the form instead of this script."""
-    url = "http://students.informatics.unimelb.edu.au/~mskh/foi/mywork/Project3/form.py"    
     print 'Content-Type: text/html\n'
     print html_start
-    print '<a href="form.py">Fatal Crashes in Australia (2009-2013)</a></div>'
+    print '<a href="{}">Fatal Crashes in Australia (2009-2013)</a></div>'.format(form_script)
     print html_end
     sys.exit()
     
@@ -202,8 +208,7 @@ def main():
         # values which are empty, unknown or residue from filtering
         # are ignored
         if len(row_key) == 0 or len(col_key) == 0: continue 
-        if '-9' in row_key or '-9' in col_key: continue
-        if 'N/A' in row_key or 'N/A' in col_key: continue                        
+        if '-9' in row_key or '-9' in col_key: continue                        
         if filter_given and filter_val != row[filter_var]: continue
         
         # col headers are put in a list and col_totals is initialized
@@ -251,9 +256,14 @@ def main():
         minimum = min(all_values) 
         maximum = max(all_values) 
         # table is generated and printed
-        print gen_table(values, col_headers, col_var, col_totals,
-                        row_var, row_totals, row_sort_key, row_reverse,
-                        all_total, minimum, maximum)
+        print gen_table(values, col_headers, col_var, col_totals, row_var,
+                        row_totals, row_sort_key, row_reverse, all_total,
+                        minimum, maximum)
+        if col_var == 'Hour' or row_var == 'Hour':
+            print unknown_time
+        if col_var == 'Speed Limit' or row_var == 'Speed Limit' or\
+           val_var == 'Speed Limit':
+            print unknown_sl
     else:
         # if table is empty (usually due to invalid filter value)
         # then the response is printed
