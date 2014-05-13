@@ -18,6 +18,12 @@ import cgitb
 cgitb.enable()
 sys.stderr = sys.stdout
 
+# cgi script which generats the form for pivot table report editor
+form_script= 'form.py'
+
+# data source url
+source_url = 'https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx'
+
 # chunks of html
 html_start = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -43,12 +49,12 @@ ht_header5 = '''There were very few fatalities due to crashes in roads with spee
 
 # hypothesis explanations [PHILIP, WRITE THESE PARAGRAPHS AFTER ALL GRAPHS HAS BEEN GENERATED]
 ht_xpln1 = '''efwsegwsegeswrtfwegws'''
-ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays
- and Sundays. But it is not larger by a great margin. One of the possible reasons may be a lot of family travelling at the end
+ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays\
+ and Sundays. But it is not larger by a great margin. One of the possible reasons may be a lot of family travelling at the end\
  of weekdays.'''
 ht_xpln3 = '''etqetrw3trwt4t4t4t4t'''
-ht_xpln4 = '''It can be observed from the bar chart that the number of fatalities in New South Wales is larger than all
- other states by a great margin. One of the possible reasons is that it is the most populated state. States with relatively low
+ht_xpln4 = '''It can be observed from the bar chart that the number of fatalities in New South Wales is larger than all\
+ other states by a great margin. One of the possible reasons is that it is the most populated state. States with relatively low\
  population had very few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
 ht_xpln5 = '''q3erfefrewqr343r3rer'''
 
@@ -72,33 +78,39 @@ page ='''
 <h1>When and where in Australia have fatal crashes occured the most in the last 5 years?</h1>
 <div class="hypothesis" id="hypothesis1">
     <h2 class="header">{}</h2>
-    <div class="visual"><img src="{}" alt="image1" width="500" height="375"></div>
+    <div class="visual"><img src="{}" alt="image1" width="500" height="375" /></div>
     <p class="explain">{}</p>
 </div>
 <div class="hypothesis">
     <h2 class="header" id="header2">{}</h2>
-    <div class="visual"><img src="{}" alt="image2" width="500" height="375"></div>
+    <div class="visual"><img src="{}" alt="image2" width="500" height="375" /></div>
     <p class="explain">{}</p>
 </div>
 <div class="hypothesis" id="hypothesis3">
     <h2 class="header">{}</h2>
-    <div class="visual"><img src="{}" alt="image2" width="500" height="375"></div>
+    <div class="visual"><img src="{}" alt="image2" width="500" height="375" /></div>
     <p class="explain">{}</p>
 </div>
 <div class="hypothesis">
     <h2 class="header">{}</h2>
-    <div class="visual""><img src="{}" alt="image2" width="500" height="375"></div>
+    <div class="visual"><img src="{}" alt="image2" width="500" height="375" /></div>
     <p class="explain">{}</p>
 </div>
 <div class="hypothesis">
     <h2 class="header">{}</h2>
-    <div class="visual"><img src="{}" alt="image2" width="500" height="375"></div>
-    <p class="explain"">{}</p>
+    <div class="visual"><img src="{}" alt="image2" width="500" height="375" /></div>
+    <p class="explain">{}</p>
 </div>
 '''.format(ht_header1, ht_img1, ht_xpln1, ht_header2, ht_img2, ht_xpln2,
            ht_header3, ht_img3, ht_xpln3, ht_header4, ht_img4, ht_xpln4,
            ht_header5, ht_img5, ht_xpln5)
 
+html_links = '''
+<span class="links"><a href="{}">Data source</a></span>
+<span class="links"><a href="{}">Pivot Table Generator</a></span>'''.format(source_url, form_script)
+
+w3_valid ='''<a href="http://validator.w3.org/check?uri=referer"><img\
+ src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>'''
 
 def vs_year(data): #ASIR, line graph
     clf()
@@ -195,8 +207,9 @@ def main():
     
     print html_start
     print page
+    print w3_valid
+    print html_links
     print html_end
         
 # main function which controls all the action
 main()
-​
