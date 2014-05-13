@@ -43,9 +43,11 @@ ht_header5 = '''There were very few fatalities due to crashes in roads with spee
 
 # hypothesis explanations [PHILIP, WRITE THESE PARAGRAPHS AFTER ALL GRAPHS HAS BEEN GENERATED]
 ht_xpln1 = '''efwsegwsegeswrtfwegws'''
-ht_xpln2 = '''qrfqt3eqftq3et3qt'''
+ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays
+ and Sundays. But it is not larger by a great margin. One of the possible reasons may be a lot of family travelling at the end
+ of weekdays.'''
 ht_xpln3 = '''etqetrw3trwt4t4t4t4t'''
-ht_xpln4 = '''It can be seen in the bar chart that the number of fatalities in New South Wales is larger than all
+ht_xpln4 = '''It can be observed from the bar chart that the number of fatalities in New South Wales is larger than all
  other states by a great margin. One of the possible reasons is that it is the most populated state. States with relatively low
  population had very few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
 ht_xpln5 = '''q3erfefrewqr343r3rer'''
@@ -98,7 +100,8 @@ page ='''
            ht_header5, ht_img5, ht_xpln5)
 
 
-def vs_year(data):
+def vs_year(data): #ASIR, line graph
+    clf()
     y = [item[1] for item in sorted(data.items(), key=lambda x: x[0])]
     plot(y, color='purple')
     xticks(arange(5), sorted(data.keys()), rotation=30)
@@ -111,13 +114,14 @@ def vs_year(data):
     
 def vs_day(data): 
     clf()
-    labels = list(calendar.day_name)
     values = []
+    labels = list(calendar.day_name)
     for day in labels:
         values += [data[day]]
     colors = ['b','g','r','c','m','y','#cccccc']
     pie(values, explode=None, labels=labels, autopct='%1.1f%%', shadow=True,
         colors=colors)
+
     title('Number of Fatalities Due to Road Crashes in Different Days of a Week',
           bbox={'facecolor':'0.8', 'pad':5})
     savefig(ht_img2, dpi=100)
