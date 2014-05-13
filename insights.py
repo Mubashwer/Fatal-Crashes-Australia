@@ -47,7 +47,7 @@ ht_xpln3 = '''etqetrw3trwt4t4t4t4t'''
 ht_xpln4 = '''It can be seen in the bar chart that the number of fatalities in New South Wales is larger than all
  other states by a great margin. One of the possible reasons is that it is the most populated state. States with relatively low
  population had very few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
-ht_xpln5 = '''q3erfefrewqr343r3rer'''
+ht_xpln5 = '''q3erfefrewqr343r3refr'''
 
 # independent variable for data dictionaries for each hypothesis
 ht_var1 = 'Year'
