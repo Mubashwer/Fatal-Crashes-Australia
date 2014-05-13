@@ -10,6 +10,7 @@ sys._stderr_ = sys.stderr = os.fdopen(2,'a')
 from numpy import *
 import csv
 from collections import defaultdict
+import calendar
 
 # tools for debugging
 #import sys
@@ -47,7 +48,7 @@ ht_xpln3 = '''etqetrw3trwt4t4t4t4t'''
 ht_xpln4 = '''It can be seen in the bar chart that the number of fatalities in New South Wales is larger than all
  other states by a great margin. One of the possible reasons is that it is the most populated state. States with relatively low
  population had very few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
-ht_xpln5 = '''q3erfefrewqr343r3refr'''
+ht_xpln5 = '''q3erfefrewqr343r3rer'''
 
 # independent variable for data dictionaries for each hypothesis
 ht_var1 = 'Year'
@@ -111,6 +112,16 @@ def vs_year(data): #ASIR, line graph
     
 def vs_day(data): #PHILIP, Pie Chart
     clf()
+    values = []
+    labels = list(calendar.day_name)
+    for day in labels:
+        values += [data[day]]
+    colors = ['b','g','r','c','m','y','#cccccc']
+    pie(values, explode=None, labels=labels, autopct='%1.1f%%', shadow=True,
+        colors=colors)
+
+    title('Number of Fatalities Due to Road Crashes in Different Days of a Week',
+          bbox={'facecolor':'0.8', 'pad':5})
     savefig(ht_img2, dpi=100)
 
 
@@ -121,7 +132,7 @@ def vs_hour(data): #MUBASHWER, histogram
     grid(True) 
     xlabel('Time (Hours in a Day)')
     ylabel(dep_var)
-    title('Histogram for Fatalities vs Time')
+    title('Histogram for Fatalities (Road Crashes) vs Time')
     savefig(ht_img3, dpi=100)
 
     
@@ -135,7 +146,7 @@ def vs_state(data): #ASIR, bar chart
     grid(True) 
     xlabel('State')
     ylabel(dep_var)
-    title('Bar Chart for Fatalities vs State')    
+    title('Bar Chart for Fatalities (Road Crashes) vs State')    
     savefig(ht_img4, dpi=100)
 
     
@@ -146,7 +157,7 @@ def vs_speed_limit(data): #MUBASHWER, Scatter Plot
     grid(True) 
     xlabel('Speed Limit (km/h)')
     ylabel(dep_var)
-    title('Scatter Plot for Fatalities vs Speed Limit')
+    title('Scatter Plot for Fatalities (Road Crashes) vs Speed Limit')
     savefig(ht_img5, dpi=100)
 
     
@@ -187,3 +198,4 @@ def main():
         
 # main function which controls all the action
 main()
+​
