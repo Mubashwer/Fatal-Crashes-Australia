@@ -127,6 +127,7 @@ def gen_table(values, col_headers, col_var, col_totals, row_var, row_totals,
     for col_key in col_headers:
         table += '<td class="total">{}</td>'.format(col_totals[col_key])     
     table += '<td class="total">{}</td></tr>\n</table>\n'.format(all_total)
+    table += '<a href="form.py">Go back</a>\n'
     return table
 
 
