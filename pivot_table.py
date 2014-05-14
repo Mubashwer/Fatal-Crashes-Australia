@@ -32,7 +32,8 @@ unknown_sl = '<div class="unknown">*Speed limits for 46 fatal crashes are unknow
 csv_loc = "fatal_crashes_5_years.csv"
 
 # cgi script which generates the form
-form_script= 'form.py'
+form_script = 'form.py'
+go_back = '<a href="{}">Go back</a>'.format(form_script)
 
 
 def apply_formula(values, formula):
@@ -95,7 +96,7 @@ def give_class(value, minimum, maximum):
 def error_response():
     """User is being told that the table is empty and is offered to go back to the form."""
     error = '<div class="error"><br /><span class="error_text">Filtered data is empty</span><br/>'
-    error +='<a href="form.py">Go back</a></div>'
+    error += go_back + '</div>'
     return error
         
 
@@ -127,7 +128,6 @@ def gen_table(values, col_headers, col_var, col_totals, row_var, row_totals,
     for col_key in col_headers:
         table += '<td class="total">{}</td>'.format(col_totals[col_key])     
     table += '<td class="total">{}</td></tr>\n</table>\n'.format(all_total)
-    table += '<a href="form.py">Go back</a>\n'
     return table
 
 
@@ -265,6 +265,7 @@ def main():
         if col_var == 'Speed Limit' or row_var == 'Speed Limit' or\
            val_var == 'Speed Limit':
             print unknown_sl
+        print go_back
     else:
         # if table is empty (usually due to invalid filter value)
         # then the response is printed
