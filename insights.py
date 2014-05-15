@@ -42,8 +42,8 @@ csv_loc = "fatal_crashes_5_years.csv"
 
 # hypothesis titles ....[PHILIP, EDIT THEM AFTER ALL GRAPHS HAS BEEN GENERATED]
 ht_header1 = '''The total number of fatalities due to road crashes decreased in the last 5 years.'''
-ht_header2 = '''There were more fatalities due to road crashes towards the end of the week.'''
-ht_header3 = '''There were more fatalities due to road crashes between 1pm-6pm than any other 5-hour interval.'''
+ht_header2 = '''There were more fatalities due to road crashes towards the end of the weeks.'''
+ht_header3 = '''There were more fatalities due to road crashes in every hour between 1pm-6pm than any other hour.'''
 ht_header4 = '''There were more fatalities due to road crashes in New South Wales than any other state.'''
 ht_header5 = '''There were very few fatalities due to crashes in roads with speed limit lower than 50 km/h.'''
 
@@ -112,7 +112,8 @@ html_links = '''
 w3_valid ='''<a href="http://validator.w3.org/check?uri=referer"><img\
  src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>'''
 
-def vs_year(data): #ASIR, line graph
+
+def vs_year(data): 
     clf()
     y = [item[1] for item in sorted(data.items(), key=lambda x: x[0])]
     plot(y, color='purple')
