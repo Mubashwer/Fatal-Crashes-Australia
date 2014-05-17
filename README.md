@@ -1,5 +1,11 @@
 Fatal Crashes in Australia (2009-2013): Pivot Table Builder and Data Insights
 =======================
+Pivot Table Builder: form.py [data submitted in form is procssed and table is generated in pivot_table.py]
+
+Data insights: insights.py
+
+Data file: fatal_crashes_5_years.csv
+
 Data source: https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx
 
 Contributors: Mubashwer Salman Khurshid (601738), Philip Lizio (582835), Asir Akram Sadman (601258) [INFO2002_2014S1_WED10_2]
