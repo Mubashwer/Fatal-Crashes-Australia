@@ -61,7 +61,7 @@ ht_xpln4 = '''It can be observed from the bar chart that the number of fatalitie
  other states by a great margin. One of the possible reasons is that it is the most populated state. States with relatively low\
  population had very few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
 ht_xpln5 = '''From the scatter plot, it is observed that roads with higher and more common speed limits such as 100km/hr
- and 60km/hr exhibit a larger number of totalities. Number of fatalities for roads with lower speed limits are very low.
+ and 60km/hr exhibit a much larger number of fatalities. Number of fatalities for roads with lower speed limits are very low.
  A possible reason may be is that there are relatively fewer roads with speed limits less than 50km/hr.'''
 
 # independent variable for data dictionaries for each hypothesis
