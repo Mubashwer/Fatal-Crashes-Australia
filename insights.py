@@ -51,13 +51,13 @@ ht_header5 = '''There were very few fatalities due to crashes in roads with spee
 ht_xpln1 = '''It can be observed from the line chart that the total number of fatalities exhibits a decreasing trend
  in the five years. But a slight increase is also observed between 2011 and 2012. Increased awareness of fatal crashes and
  steps taken by the Australian government are among the probable reasons of the decreasing trend.'''
-ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays\
+ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays
  and Sundays. But it is not larger by a great margin. One of the possible reasons may be a lot of family travelling at the end\
  of weekdays.'''
 ht_xpln3 = '''It can be observed from the histogram that the total number of fatalities reaches its maximum between
  1pm and 6pm. The number of fatalities in every hour in this interval is higher than the any other hour. A possible
  reason is travelling of people from school/work to home.'''
-ht_xpln4 = '''It can be observed from the bar chart that the number of fatalities in New South Wales is larger than all\
+ht_xpln4 = '''It can be observed from the bar chart that the number of fatalities in New South Wales is larger than all
  other states by a great margin. One of the possible reasons is that it is the most populated state. States with relatively low\
  population had very few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
 ht_xpln5 = '''From the scatter plot, it is observed that roads with higher and more common speed limits such as 100km/hr
