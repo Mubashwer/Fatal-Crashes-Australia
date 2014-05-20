@@ -13,7 +13,6 @@ from collections import defaultdict
 import calendar
 
 # tools for debugging
-#import sys
 import cgitb
 cgitb.enable()
 sys.stderr = sys.stdout
@@ -40,26 +39,26 @@ html_end = '''
 # csv file location
 csv_loc = "fatal_crashes_5_years.csv"
 
-# hypothesis titles ....[PHILIP, EDIT THEM AFTER ALL GRAPHS HAS BEEN GENERATED]
+# hypothesis titles
 ht_header1 = '''The total number of fatalities due to road crashes decreased in the last 5 years.'''
 ht_header2 = '''There were more fatalities due to road crashes towards the end of the weeks.'''
 ht_header3 = '''There were more fatalities due to road crashes in every hour between 1pm-6pm than any other hour.'''
 ht_header4 = '''There were more fatalities due to road crashes in New South Wales than any other state.'''
 ht_header5 = '''There were very few fatalities due to crashes in roads with speed limit lower than 50 km/h.'''
 
-# hypothesis explanations [PHILIP, WRITE THESE PARAGRAPHS AFTER ALL GRAPHS HAS BEEN GENERATED]
-ht_xpln1 = '''From this graph it can be observed that fatalities have decreased in the last 5 years. This could be due to\
- stricter road laws being enforced in the country or higher levels of safety requirements in newer car models. '''
-ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays\
- and Sundays, but it is not larger by a great margin. One of the possible reasons may be a lot of family travelling at the end\
- of weekdays.'''
+# hypothesis explanations
+ht_xpln1 = '''From this graph it can be observed that fatalities have decreased in the last 5 years. This could be due to \
+stricter road laws being enforced in the country or higher levels of safety requirements in newer car models. '''
+ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays \
+and Sundays, but it is not larger by a great margin. One of the possible reasons may be a lot of family travelling at the end \
+of weekdays.'''
 ht_xpln3 = '''It can be observed from the bar chart that the road is most dangerous during the hours of 1-6pm. This could be \
 a result of higher levels of traffic that occur during these hours from people moving from their work to home.'''
 ht_xpln4 = '''The bar chart shows that the number of fatalities in New South Wales is larger than all other states by a great \
 margin. One of the possible reasons is that it is the most populated state. States with relatively low population had very \
 few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
-ht_xpln5 = '''The scatter plot chart gives indication as to the relationship between higher speed limit zones and the number of\
-fatalities. The graph shows a clear difference in the level of fatalities in roads with speed limit higher than 40km/h and those\
+ht_xpln5 = '''The scatter plot chart gives indication as to the relationship between higher speed limit zones and the number of \
+fatalities. The graph shows a clear difference in the level of fatalities in roads with speed limit higher than 40km/h and those \
 below 40km/h showing that roads with higher speed limit are more prone to accidents.'''
 
 # independent variable for data dictionaries for each hypothesis
@@ -111,13 +110,14 @@ page ='''
 
 html_links = '''
 <span class="links"><a href="{}">Data source</a></span>
-<span class="links"><a href="{}">Pivot Table Generator</a></span>'''.format(source_url, form_script)
+<span class="links"><a href="{}">Pivot Table Builder</a></span>'''.format(source_url, form_script)
 
 w3_valid ='''<a href="http://validator.w3.org/check?uri=referer"><img\
  src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>'''
 
 
 def vs_year(data): 
+    '''Line Graph for Fatalities vs Time'''
     clf()
     y = [item[1] for item in sorted(data.items(), key=lambda x: x[0])]
     plot(y, color='purple')
@@ -130,6 +130,7 @@ def vs_year(data):
 
     
 def vs_day(data): 
+    '''Number of Fatalities Due to Road Crashes in Different Days of a Week'''
     clf()
     values = []
     labels = list(calendar.day_name)
@@ -145,6 +146,7 @@ def vs_day(data):
 
 
 def vs_hour(data): 
+    '''Histogram for Fatalities (Road Crashes) vs Time'''
     clf()
     hist(data.keys(), bins = arange(0,25), weights = data.values(), facecolor='green')
     xticks(arange(0,24,2), ['{:02d}'.format(hour) for hour in arange(0,24,2)])
@@ -169,6 +171,7 @@ def vs_state(data):
 
     
 def vs_speed_limit(data): 
+    '''Scatter Plot for Fatalities (Road Crashes) vs Speed Limit'''
     clf()
     scatter(data.keys(), data.values(), s = data.values(), color = 'red')
     yticks(arange(0,3000,500))
@@ -218,4 +221,3 @@ def main():
         
 # main function which controls all the action
 main()
-​
