@@ -40,29 +40,27 @@ html_end = '''
 # csv file location
 csv_loc = "fatal_crashes_5_years.csv"
 
-# hypothesis titles
+# hypothesis titles ....[PHILIP, EDIT THEM AFTER ALL GRAPHS HAS BEEN GENERATED]
 ht_header1 = '''The total number of fatalities due to road crashes decreased in the last 5 years.'''
 ht_header2 = '''There were more fatalities due to road crashes towards the end of the weeks.'''
 ht_header3 = '''There were more fatalities due to road crashes in every hour between 1pm-6pm than any other hour.'''
 ht_header4 = '''There were more fatalities due to road crashes in New South Wales than any other state.'''
 ht_header5 = '''There were very few fatalities due to crashes in roads with speed limit lower than 50 km/h.'''
 
-# hypothesis explanations
-ht_xpln1 = '''It can be observed from the line chart that the total number of fatalities exhibits a decreasing trend
- in the five years. But a slight increase is also observed between 2011 and 2012. Increased awareness of fatal crashes and
- steps taken by the Australian government are among the probable reasons of the decreasing trend.'''
-ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays
- and Sundays. But it is not larger by a great margin. One of the possible reasons may be a lot of family travelling at the end\
+# hypothesis explanations [PHILIP, WRITE THESE PARAGRAPHS AFTER ALL GRAPHS HAS BEEN GENERATED]
+ht_xpln1 = '''From this graph it can be observed that fatalities have decreased in the last 5 years. This could be due to\
+ stricter road laws being enforced in the country or higher levels of safety requirements in newer car models. '''
+ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays\
+ and Sundays, but it is not larger by a great margin. One of the possible reasons may be a lot of family travelling at the end\
  of weekdays.'''
-ht_xpln3 = '''It can be observed from the histogram that the total number of fatalities reaches its maximum between
- 1pm and 6pm. The number of fatalities in every hour in this interval is higher than the any other hour. A possible
- reason is travelling of people from school/work to home.'''
-ht_xpln4 = '''It can be observed from the bar chart that the number of fatalities in New South Wales is larger than all
- other states by a great margin. One of the possible reasons is that it is the most populated state. States with relatively low\
- population had very few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
-ht_xpln5 = '''From the scatter plot, it is observed that roads with higher and more common speed limits such as 100km/hr
- and 60km/hr exhibit a much larger number of fatalities. Number of fatalities for roads with lower speed limits are very low.
- A possible reason may be is that there are relatively fewer roads with speed limits less than 50km/hr.'''
+ht_xpln3 = '''It can be observed from the bar chart that the road is most dangerous during the hours of 1-6pm. This could be \
+a result of higher levels of traffic that occur during these hours from people moving from their work to home.'''
+ht_xpln4 = '''The bar chart shows that the number of fatalities in New South Wales is larger than all other states by a great \
+margin. One of the possible reasons is that it is the most populated state. States with relatively low population had very \
+few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
+ht_xpln5 = '''The scatter plot chart gives indication as to the relationship between higher speed limit zones and the number of\
+fatalities. The graph shows a clear difference in the level of fatalities in roads with speed limit higher than 40km/h and those\
+below 40km/h showing that roads with higher speed limit are more prone to accidents.'''
 
 # independent variable for data dictionaries for each hypothesis
 ht_var1 = 'Year'
@@ -220,3 +218,4 @@ def main():
         
 # main function which controls all the action
 main()
+​
