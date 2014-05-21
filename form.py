@@ -6,6 +6,12 @@ import cgitb
 cgitb.enable()
 sys.stderr = sys.stdout
 
+# the CGI script to send the form data to
+pivot_table_script = 'pivot_table.py'
+
+# data insights location
+insights = 'insights.py'
+
 # chunks of html
 html_start = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,9 +25,9 @@ html_start = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
 html_end = '''
 </div></body></html>'''
 
-html_form ='''
+html_form = '''
 <h2 class="header">Fatal Crashes in Australia (2009-2013)</h2>
-<form action="pivot_table.py" method="post">
+<form action="{}" method="post">
     <fieldset id="pivot_table">
             <legend>Pivot Table Report Editor</legend>
             <div class="field_select">
@@ -113,10 +119,11 @@ html_form ='''
         <input type="reset" value="Reset" />
         <input type="submit" value="Submit" />
     </div>
-</form>'''
+</form>'''.format(pivot_table_script)
 
 html_links = '''
-<span class="data_source"><a href="https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx">Data source</a></span>'''
+<span class="links"><a href="https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx">Data source</a></span>
+<span class="links"><a href="{}">Insights</a></span>'''.format(insights)
 
 
 # main function which controls all the action

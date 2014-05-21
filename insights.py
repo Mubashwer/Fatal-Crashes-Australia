@@ -1,12 +1,13 @@
-import os, sys
-os.dup2(2,3)
-stderr = os.fdopen(2,'a')
+import os
+import sys
+os.dup2(2, 3)
+stderr = os.fdopen(2, 'a')
 stderr.close()
 import matplotlib
 matplotlib.use('Agg')
 from pylab import *
-os.dup2(3,2)
-sys._stderr_ = sys.stderr = os.fdopen(2,'a')
+os.dup2(3, 2)
+sys._stderr_ = sys.stderr = os.fdopen(2, 'a')
 from numpy import *
 import csv
 from collections import defaultdict
@@ -18,7 +19,7 @@ cgitb.enable()
 sys.stderr = sys.stdout
 
 # cgi script which generats the form for pivot table report editor
-form_script= 'form.py'
+form_script = 'form.py'
 
 # data source url
 source_url = 'https://www.bitre.gov.au/statistics/safety/fatal_road_crash_database.aspx'
@@ -68,7 +69,7 @@ ht_var3 = 'Hour'
 ht_var4 = 'State'
 ht_var5 = 'Speed Limit'
 
-dep_var = 'Number of Fatalities' # depedendent variable
+dep_var = 'Number of Fatalities'  # depedendent variable
 
 # file names for each visualisation
 ht_img1 = 'vs_year.png'
@@ -77,7 +78,7 @@ ht_img3 = 'vs_hour.png'
 ht_img4 = 'vs_state.png'
 ht_img5 = 'vs_speed_limit.png'
 
-page ='''
+page = '''
 <h1>When and where in Australia have fatal crashes occured the most in the last 5 years?</h1>
 <div class="hypothesis" id="hypothesis1">
     <h2 class="header">{}</h2>
@@ -112,11 +113,11 @@ html_links = '''
 <span class="links"><a href="{}">Data source</a></span>
 <span class="links"><a href="{}">Pivot Table Builder</a></span>'''.format(source_url, form_script)
 
-w3_valid ='''<a href="http://validator.w3.org/check?uri=referer"><img\
+w3_valid = '''<a href="http://validator.w3.org/check?uri=referer"><img\
  src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>'''
 
 
-def vs_year(data): 
+def vs_year(data):
     '''Line Graph for Fatalities vs Time'''
     clf()
     y = [item[1] for item in sorted(data.items(), key=lambda x: x[0])]
@@ -128,71 +129,73 @@ def vs_year(data):
     title('Line Graph for Fatalities vs Time')
     savefig(ht_img1, dpi=100)
 
-    
-def vs_day(data): 
+
+def vs_day(data):
     '''Number of Fatalities Due to Road Crashes in Different Days of a Week'''
     clf()
     values = []
     labels = list(calendar.day_name)
     for day in labels:
         values += [data[day]]
-    colors = ['b','g','r','c','m','y','#cccccc']
+    colors = ['b', 'g', 'r', 'c', 'm', 'y', '#cccccc']
     pie(values, explode=None, labels=labels, autopct='%1.1f%%', shadow=True,
         colors=colors)
 
     title('Number of Fatalities Due to Road Crashes in Different Days of a Week',
-          bbox={'facecolor':'0.8', 'pad':5})
+          bbox={'facecolor': '0.8', 'pad': 5})
     savefig(ht_img2, dpi=100)
 
 
-def vs_hour(data): 
+def vs_hour(data):
     '''Histogram for Fatalities (Road Crashes) vs Time'''
     clf()
-    hist(data.keys(), bins = arange(0,25), weights = data.values(), facecolor='green')
-    xticks(arange(0,24,2), ['{:02d}'.format(hour) for hour in arange(0,24,2)])
-    grid(True) 
+    hist(data.keys(), bins=arange(0, 25),
+         weights=data.values(), facecolor='green')
+    xticks(arange(0, 24, 2), ['{:02d}'.format(hour)
+           for hour in arange(0, 24, 2)])
+    grid(True)
     xlabel('Time (Hours in a Day)')
     ylabel(dep_var)
     title('Histogram for Fatalities (Road Crashes) vs Time')
     savefig(ht_img3, dpi=100)
 
-    
+
 def vs_state(data):
     clf()
     bars = arange(len(data))
     heights = [item[1] for item in sorted(data.items(), key=lambda x: x[0])]
     bar(bars, heights, align='center', facecolor='orange')
     xticks(bars, sorted(data.keys()), rotation=30)
-    grid(True) 
+    grid(True)
     xlabel('State')
     ylabel(dep_var)
-    title('Bar Chart for Fatalities (Road Crashes) vs State')    
+    title('Bar Chart for Fatalities (Road Crashes) vs State')
     savefig(ht_img4, dpi=100)
 
-    
-def vs_speed_limit(data): 
+
+def vs_speed_limit(data):
     '''Scatter Plot for Fatalities (Road Crashes) vs Speed Limit'''
     clf()
-    scatter(data.keys(), data.values(), s = data.values(), color = 'red')
-    yticks(arange(0,3000,500))
-    grid(True) 
+    scatter(data.keys(), data.values(), s=data.values(), color='red')
+    yticks(arange(0, 3000, 500))
+    grid(True)
     xlabel('Speed Limit (km/h)')
     ylabel(dep_var)
     title('Scatter Plot for Fatalities (Road Crashes) vs Speed Limit')
     savefig(ht_img5, dpi=100)
 
-    
-# main function which controls all the action                    
+
+# main function which controls all the action
 def main():
     # load data from csv file
     csvfile = open(csv_loc)
     data = csv.DictReader(csvfile)
-    
+
     # data dictionaries for each hypothesis are initialized
-    ht_data1, ht_data2 = defaultdict(int), defaultdict(int) 
+    ht_data1, ht_data2 = defaultdict(int), defaultdict(int)
     ht_data3, ht_data4 = defaultdict(int), defaultdict(int)
     ht_data5 = defaultdict(int)
-    
+
     # store data in dictionaries for each hypothesis
     for row in data:
         fatalities = int(row[dep_var])
@@ -204,20 +207,20 @@ def main():
         if '-9' not in row[ht_var5]:
             ht_data5[int(row[ht_var5])] += fatalities
     csvfile.close()
-    print 'Content-Type: text/html\n'        
-    
+    print 'Content-Type: text/html\n'
+
     # generate visualisations
     vs_year(ht_data1)
     vs_day(ht_data2)
     vs_hour(ht_data3)
     vs_state(ht_data4)
     vs_speed_limit(ht_data5)
-    
+
     print html_start
     print page
     print w3_valid
     print html_links
     print html_end
-        
+
 # main function which controls all the action
 main()
