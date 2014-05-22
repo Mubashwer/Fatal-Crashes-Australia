@@ -161,6 +161,7 @@ def vs_hour(data):
 
 
 def vs_state(data):
+    '''Bar Chart for Fatalities (Road Crashes) vs State'''
     clf()
     bars = arange(len(data))
     heights = [item[1] for item in sorted(data.items(), key=lambda x: x[0])]
