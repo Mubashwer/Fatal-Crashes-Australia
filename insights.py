@@ -1,13 +1,16 @@
-import os
-import sys
+# --- fix to IVLE's problem in using matplotlib
+import os, sys
 os.dup2(2, 3)
 stderr = os.fdopen(2, 'a')
 stderr.close()
+# ---
 import matplotlib
 matplotlib.use('Agg')
 from pylab import *
+# --- fix to IVLE's problem in using matplotlib
 os.dup2(3, 2)
-sys._stderr_ = sys.stderr = os.fdopen(2, 'a')
+sys.__stderr__ = sys.stderr = os.fdopen(2, 'a')
+# ---
 from numpy import *
 import csv
 from collections import defaultdict
