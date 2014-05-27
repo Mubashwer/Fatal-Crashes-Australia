@@ -160,6 +160,8 @@ def vs_hour(data):
     xlabel('Time (Hours in a Day)')
     ylabel(dep_var)
     title('Histogram for Fatalities (Road Crashes) vs Time')
+    text = '*Time for 1 fatal crash is unknown which is not taken into account.'
+    plt.figtext(0, 0, text)    
     savefig(ht_img3, dpi=100)
 
 
@@ -186,6 +188,8 @@ def vs_speed_limit(data):
     xlabel('Speed Limit (km/h)')
     ylabel(dep_var)
     title('Scatter Plot for Fatalities (Road Crashes) vs Speed Limit')
+    text = '*Speed limits for 46 fatal crashes are unknown which are not taken into account.'
+    plt.figtext(0, 0, text)    
     savefig(ht_img5, dpi=100)
 
 
