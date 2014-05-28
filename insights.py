@@ -53,13 +53,13 @@ ht_header5 = '''There were very few fatalities due to crashes in roads with spee
 # hypothesis explanations
 ht_xpln1 = '''From this graph it can be observed that fatalities have decreased in the last 5 years. This could be due to \
 stricter road laws being enforced in the country or higher levels of safety requirements in newer car models. '''
-ht_xpln2 = '''It can be observed from the pie chart that the number of fatalities is relatively larger in Fridays, Satudays \
+ht_xpln2 = '''It can be observed from the bar chart that the number of fatalities is relatively larger in Fridays, Satudays \
 and Sundays, but it is not larger by a great margin. One of the possible reasons may be a lot of family travelling at the end \
 of weekdays.'''
 ht_xpln3 = '''It can be observed from the bar chart that the road is most dangerous during the hours of 1-6pm. This could be \
 a result of higher levels of traffic that occur during these hours from people moving from their work to home.'''
 ht_xpln4 = '''The bar chart shows that the number of fatalities in New South Wales is larger than all other states by a great \
-margin. One of the possible reasons is that it is the most populated state. States with relatively low population had very \
+margin. The obvious reason is that it is the most populated state. States with relatively low population had very \
 few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
 ht_xpln5 = '''The scatter plot chart gives indication as to the relationship between higher speed limit zones and the number of \
 fatalities. The graph shows a clear difference in the level of fatalities in roads with speed limit higher than 40km/h and those \
@@ -134,7 +134,7 @@ def vs_year(data):
 
 
 def vs_day(data):
-    '''Number of Fatalities Due to Road Crashes in Different Days of a Week'''
+    '''Bar Chart for Fatalities (Road Crashes) vs Days in Week'''
     clf()
     bars = arange(len(data))
     labels = list(calendar.day_name)
@@ -145,9 +145,9 @@ def vs_day(data):
     xticks(bars, labels, rotation=30)
     ylim([0,max(heights)+50])
     grid(True)
-    xlabel('Days')
+    xlabel('Days in Week')
     ylabel(dep_var)
-    title('Number of Fatalities Due to Road Crashes in Different Days of a Week')
+    title('Bar Chart for Fatalities (Road Crashes) vs Days in Week')
     savefig(ht_img2, dpi=100)
     
     
