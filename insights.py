@@ -60,7 +60,8 @@ ht_xpln3 = '''It can be observed from the bar chart that the road is most danger
 a result of higher levels of traffic that occur during these hours from people moving from their work to home.'''
 ht_xpln4 = '''The bar chart shows that the number of fatalities in New South Wales is larger than all other states by a great \
 margin. The obvious reason is that it is the most populated state. States with relatively low population had very \
-few fatalities such as Northern Territory, Australian Capital Territory and Tasmania.'''
+few fatalities such as Northern Territory, Australian Capital Territory and Tasmania. A chart with Number of Fatalities \
+per capita would give a more accurate relationship between variables.'''
 ht_xpln5 = '''The scatter plot chart gives indication as to the relationship between higher speed limit zones and the number of \
 fatalities. The graph shows a clear difference in the level of fatalities in roads with speed limit higher than 40km/h and those \
 below 40km/h showing that roads with higher speed limit are more prone to accidents.'''
