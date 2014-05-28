@@ -136,19 +136,21 @@ def vs_year(data):
 def vs_day(data):
     '''Number of Fatalities Due to Road Crashes in Different Days of a Week'''
     clf()
-    values = []
+    bars = arange(len(data))
     labels = list(calendar.day_name)
+    heights = []
     for day in labels:
-        values += [data[day]]
-    colors = ['b', 'g', 'r', 'c', 'm', 'y', '#cccccc']
-    pie(values, explode=None, labels=labels, autopct='%1.1f%%', shadow=True,
-        colors=colors)
-
-    title('Number of Fatalities Due to Road Crashes in Different Days of a Week',
-          bbox={'facecolor': '0.8', 'pad': 5})
+        heights += [data[day]]
+    bar(bars, heights, align='center', facecolor='grey')
+    xticks(bars, labels, rotation=30)
+    ylim([0,max(heights)+50])
+    grid(True)
+    xlabel('Days')
+    ylabel(dep_var)
+    title('Number of Fatalities Due to Road Crashes in Different Days of a Week')
     savefig(ht_img2, dpi=100)
-
-
+    
+    
 def vs_hour(data):
     '''Histogram for Fatalities (Road Crashes) vs Time'''
     clf()
